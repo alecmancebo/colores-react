@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Formulario({crearColor}){
+function Formulario({crearColor, token}){
 
     let [textoInput,setTextoInput] = useState("")
     let [error,setError] = useState(false)

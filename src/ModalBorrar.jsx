@@ -1,10 +1,11 @@
-function ModalBorrar({id,borrarColor,setBorrando}){
+function ModalBorrar({id,borrarColor,setBorrando, token}){
     return <div className="modal-borrar modal-visible">
                 <div className="modal">
                     <button onClick={ () => {
 
                         return fetch(`https://api-colores-dlta.onrender.com/borrar/${id}`, {
                                 method: "DELETE",
+                                headers: {"Authorization": `Bearer ${token}`}
                             })
                             .then( ({status}) => { //nos llegará el id del back o error si no existe en el back
                                 if(status == 204){

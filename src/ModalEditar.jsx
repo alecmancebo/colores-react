@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function ModalEditar({id,r,g,b,actualizarColor,setEditando}){
+function ModalEditar({id,r,g,b,actualizarColor,setEditando, token}){
 
     let [inputR,setInputR] = useState(r)
     let [inputG,setInputG] = useState(g)
@@ -26,6 +26,7 @@ function ModalEditar({id,r,g,b,actualizarColor,setEditando}){
                                 method: "PATCH",
                                 body: JSON.stringify ({ r,g,b }),
                                 headers: {
+                                    "Authorization": `Bearer ${token}`,
                                     "Content-type" : "application/json"
                                 }
                                 })
