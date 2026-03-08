@@ -31,6 +31,7 @@ function Formulario({crearColor}){
                                 method: "POST",
                                 body: JSON.stringify ({ r,g,b }),
                                 headers: {
+                                    "Authorization": `Bearer ${token}`,
                                     "Content-type" : "application/json"
                                 }
                             })

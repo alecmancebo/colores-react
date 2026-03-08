@@ -8,7 +8,9 @@ function App() {
   let [colores,setColores] = useState([]) //primero se carga vacio
 
   useEffect(() => { 
-    fetch("https://api-colores-dlta.onrender.com/colores")
+    fetch("https://api-colores-dlta.onrender.com/colores",{
+      "Authorization": `Bearer ${token}`
+    })
     .then(respuesta => respuesta.json())
     .then(colores => {
       setColores(colores)//estos colores no son los de arriba, despues de que cargue todo, rellenamos con los colores. En cuanto llamas a setColores, React se entera de que hay datos nuevos y vuelve a pintar el componente, esta vez mostrando la lista de colores real.
