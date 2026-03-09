@@ -16,11 +16,11 @@ function Login() {
                                 })
                                 .then(res => res.json())
                                 
-    }} className="modal">
+            }} className="modal">
                 <h2>Login</h2>
                 <input type="text" placeholder="Usuario" value={nombre} onChange={e => setNombre(e.target.value)} />
                 <input type="password" placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} />
-                {error && <p style={{color: 'red'}}>Datos incorrectos</p>}
+                <p style={{color: 'red'}} className="datos">Datos incorrectos</p>
                 <button type="submit">Entrar</button>
             </form>
         </div>
