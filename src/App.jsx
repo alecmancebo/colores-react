@@ -44,7 +44,7 @@ function App() {
 
   return <>
         <button onClick={() => { localStorage.removeItem("token"); setToken(null); }}>Cerrar Sesión</button>
-        <Formulario crearColor={crearColor} />
+        <Formulario crearColor={crearColor} token={token}/>
         <ul>
           {
             colores.map(({_id,r,g,b}) => <Color key={_id} id={_id} r={r} g={g} b={b} borrarColor={borrarColor} actualizarColor={actualizarColor} token={token}/>)
